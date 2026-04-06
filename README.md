@@ -35,7 +35,7 @@ This implies a three-phase evolutionary trajectory:
 
 The 2026 pilot study targets **BioProject PRJNA1166088** — 127 *E. coli* isolates from French cattle (Haenni et al., 2017) — as a representative dataset for Phase 2 (Stabilization).
 
-### Step 1: Initial Screening
+### WP1 / Step 1: Initial Screening
 
 Establishing the genetic baseline across all 127 isolates:
 
@@ -43,14 +43,19 @@ Establishing the genetic baseline across all 127 isolates:
 - **MyDbFinder**: Targeted screening using a custom database ([`integron_trap_db.fasta`](https://github.com/Marocco101/bovine_mcr1_genomics/blob/main/integron_trap_db.fasta)) to detect *ISApl1* sequences and "trap" architectures (*mcr-1–sul–dfr* clusters)
 - **R**: Co-occurrence analysis and visualization (dplyr, ggplot2)
 
-### Step 2: Advanced Structural Analysis
+### WP1 / Step 2: Advanced Structural Analysis
 
 Characterizing the physical stabilization of resistance genes:
 
-- **Abricate**: Rapid large-scale screening; cross-validation against CARD and VFDB databases
+- **Abricate**: Batch screening, 127 isolates; cross-validation against CARD and VFDB databases
 - **IntegronFinder**: Definition of Class 1 integron architecture; confirmation that *mcr-1* is physically "captured"
 - **PlasmidFinder**: Identification of plasmid incompatibility groups (e.g., IncHI2); quantification of the plasmid-to-chromosome transition
 - **ISfinder**: Mapping of *ISApl1* decay across the three evolutionary eras
+
+### WP2 / Spatiotemporal Analysis
+
+- **BEAST 2 (MASCOT/GLM)**: Validation of the 2017 divergence point; emergence timing of stabilized lineages
+- **Spatial analysis**: Departmental-level dissemination patterns using existing RESAPATH and ALEA data — *note: ComEDIA-Lyon high-resolution environmental data planned for PhD phase only*
 
 ---
 
@@ -95,14 +100,31 @@ All analyses use publicly available data. No proprietary datasets are involved.
 
 ## Roadmap
 
+![Roesearch Roadmap](Github_roadmap.svg) 
+
+**Phase 0 — Completed**
 - [x] Exposure analysis (ALEA vs. RESAPATH)
 - [x] Longitudinal decoupling analysis (structural break identification)
 - [x] Genomic proof-of-concept (EC590 reference strain)
-- [ ] **Pilot screening of PRJNA1166088** ← *current focus*
+- [x] Spatial correlation at departmental level (RESAPATH)
+
+**WP1 · Phase 1 — Current focus**
+- [ ] Pilot screening of PRJNA1166088 (ResFinder, MyDbFinder, R)
+- [ ] Co-occurrence evaluation: literature baseline · descriptive stats · Fisher's exact test
+
+**WP1 · Phase 2**
+- [ ] Structural analysis (Abricate, IntegronFinder, PlasmidFinder, ISfinder)
 - [ ] ISApl1 decay quantification across evolutionary eras
-- [ ] BEAST 2 phylodynamic analysis
-- [ ] Environmental dissemination analysis (river basin transect)
-- [ ] Manuscript preparation
+
+**WP2 · Phase 3**
+- [ ] BEAST 2 phylodynamic analysis (2017 divergence point)
+- [ ] Spatial dissemination analysis using existing departmental data
+- [ ] ComEDIA-Lyon environmental data *(planned for PhD phase)*
+
+**Output**
+- [ ] Strengthened PhD proposal — Summer 2026
+- [ ] PhD application — Spring 2027
+- [ ] PhD start — 2027
 
 ---
 
