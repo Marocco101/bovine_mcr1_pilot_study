@@ -1,33 +1,122 @@
-# Unintended Consequences of Antibiotic Stewardship: How Antibiotic Substitution Stabilizes MDR Persistence in French Livestock Ecosystems
+# Unintended Consequences of Antibiotic Stewardship: The Genetic Trap and Genomic Stabilization of *mcr-1* in the French One Health Interface
 
-## Project Overview
-This repository includes the pilot analysis for my PhD research (expected to start in Autumn 2027), focusing on the "Ecoantibio Paradox" in France. 
+**Author:** Makiko FUJITA-SUZANNE  
+**Last updated:** April 2026  
+**Status:** Active — Pilot Study in Progress (2026)
 
-### The Problem: The Ecoantibio Paradox
-Despite a reduction in colistin use in the French bovine sector, phenotypic resistance has increased since 2019. This suggests that usage reduction policy alone is insufficient to eliminate colistin-resistant reservoirs. 
+---
 
-### My Hypothesis: The Genetic Trap
-I hypothesize an evolutionary "plasmid-to-chromosome transition" driven by the substitution of colistin with Category D antibiotics (trimethoprim-sulfonamides). 
-* **Mechanism**: Co-selection with sulfonamide resistance genes ($sul1/dfrA$) physically captures and maintains the $mcr-1$ transposon. 
-* **Stabilization**: Insertion Sequence ($ISApl1$) decay locks the resistance gene into the chromosome, neutralizing fitness costs. 
+## Overview
 
-### 2026 Mini-Project Objectives
-1. ## Current Progress: Pilot Analysis of PRJNA1166088
+This repository serves as the central hub for my independnt pilot research project, which underpins a PhD proposal (expected start: Autumn 2027). The project investigates the **"Ecoantibio Paradox"**: despite a dramatic reduction in colistin use in the French bovine sector, phenotypic colistin resistance has stabilized and rebounded since 2019 — defying the conventional "usage-resistance" dogma.
 
-I have identified a key dataset (BioProject: PRJNA1166088) containing 127 isolates from French cattle (Haenni et al., 2017). This dataset serves as a representative sample for **Phase 2 (Stabilization)** of my research hypothesis.
+I hypothesize that this paradox signals a fundamental evolutionary shift: a **plasmid-to-chromosome transition** of the *mcr-1* gene, driven by the substitution of colistin with Category D antibiotics (trimethoprim-sulfonamides). Once chromosomally integrated, resistance becomes autonomous and impervious to stewardship interventions — what I term the **"Genetic Trap"**.
 
-### Technical Workflow for 2026 Pilot Study
-To validate the "Genetic Trap" mechanism, I am implementing a two-step bioinformatic pipeline. I will begin with high-confidence screening using established tools before moving into advanced structural characterization.
+---
+
+## The Core Hypothesis
+
+The "Genetic Trap" operates through two sequential mechanisms:
+
+1. **Co-selection**: Use of trimethoprim-sulfonamides selects for Class 1 integrons carrying *sul1/dfrA*, which physically capture and maintain the *mcr-1* transposon — even in the absence of colistin.
+2. **Stabilization**: Insertion Sequence (*ISApl1*) decay permanently locks *mcr-1* into the chromosome, neutralizing fitness costs and enabling clonal vertical transmission.
+
+This implies a three-phase evolutionary trajectory:
+
+| Phase | Period | Mechanism | Driver |
+|---|---|---|---|
+| Mobilization | 2006–2016 | Plasmid-borne, HGT-driven | Colistin exposure (r = 0.86, p < 0.001) |
+| Decoupling & Stabilization | 2017–2020 | IS decay → chromosomal fixation | Structural break (p < 0.001) |
+| Clonal Expansion | 2021–present | Vertical transmission, autonomous | Independent of antibiotic pressure (R² = 0.26) |
+
+---
+
+## Pilot Study (2026): PRJNA1166088
+
+The 2026 pilot study targets **BioProject PRJNA1166088** — 127 *E. coli* isolates from French cattle (Haenni et al., 2017) — as a representative dataset for Phase 2 (Stabilization).
 
 ### Step 1: Initial Screening
-First of all, I will utilize the following tools to establish a genetic baseline for the 127 isolates (PRJNA1166088):
 
-* **ResFinder**: To identify acquired AMR genes, specifically $mcr-1$, $sul1/2$, and $dfrA$.
-* **MyDbFinder**: To perform targeted screening using a custom database. This will be used to detect the $ISApl1$ sequence and specific "trap" architectures (e.g., $mcr-1$ - $sul$ - $dfr$ clusters) to quantify IS decay.
+Establishing the genetic baseline across all 127 isolates:
 
-### Step 2: Advanced Structural Analysis 
-Building on the results from Step 1, I will apply new tools to characterize the physical stabilization of these genes:
+- **ResFinder**: Detection of acquired AMR genes — specifically *mcr-1*, *sul1/2*, and *dfrA*
+- **MyDbFinder**: Targeted screening using a custom database ([`integron_trap_db.fasta`](https://github.com/Marocco101/bovine_mcr1_genomics/blob/main/integron_trap_db.fasta)) to detect *ISApl1* sequences and "trap" architectures (*mcr-1–sul–dfr* clusters)
+- **R**: Co-occurrence analysis and visualization (dplyr, ggplot2)
 
-* **Abricate**: To perform rapid, large-scale screening and cross-validation against multiple databases (CARD, VFDB).
-* **IntegronFinder**: To define the architecture of Class 1 integrons and determine if $mcr-1$ is physically "captured" within these elements. 
-* **PlasmidFinder**: To identify plasmid incompatibility groups (e.g., IncHI2) and evaluate the transition from plasmid-borne to chromosomal integration. 
+### Step 2: Advanced Structural Analysis
+
+Characterizing the physical stabilization of resistance genes:
+
+- **Abricate**: Rapid large-scale screening; cross-validation against CARD and VFDB databases
+- **IntegronFinder**: Definition of Class 1 integron architecture; confirmation that *mcr-1* is physically "captured"
+- **PlasmidFinder**: Identification of plasmid incompatibility groups (e.g., IncHI2); quantification of the plasmid-to-chromosome transition
+- **ISfinder**: Mapping of *ISApl1* decay across the three evolutionary eras
+
+---
+
+## Repository Structure
+
+```
+bovine_mcr1/
+├── README.md               ← This file
+└── (analyses in progress)
+```
+
+### Related Repositories
+
+| Repository | Description | Status |
+|---|---|---|
+| [bovine_mcr1_exposure](https://github.com/Marocco101/bovine_mcr1_exposure) | Colistin exposure vs. resistance (ALEA data) | ✔️ Complete |
+| [bovine_mcr1_longitudinal](https://github.com/Marocco101/bovine_mcr1_longitudinal) | Longitudinal decoupling analysis (2006–2024) | ✔️ Complete |
+| [bovine_mcr1_genomics](https://github.com/Marocco101/bovine_mcr1_genomics) | Genomic proof-of-concept (EC590 reference strain) | ✔️ Complete |
+| [bovine_mcr1_spatial](https://github.com/Marocco101/bovine_mcr1_spatial) | Spatial correlation at departmental level | ✔️ Complete |
+
+---
+
+## Key Preliminary Findings
+
+From analyses already completed and published in the related repositories above:
+
+- **Statistical decoupling**: A structural break in 2017 was identified in RESAPATH data (2006–2024). Colistin resistance was strongly correlated with TMP-SMX in Phase 1 (r = 0.85, p < 0.001), but this association collapsed in Phase 2 (r = 0.51, R² = 0.26).
+- **Genomic redundancy**: Analysis of a high-risk 2016 isolate (LMBK) identified *mcr-1* co-harbored with *sul1/dfrA1* and *sul2/dfrA36* on the chromosome — direct evidence of the "Genetic Trap" architecture.
+- **Spatial decoupling**: No significant correlation between departmental TMP-SMX co-selection pressure and colistin resistance in 2009 (r = 0.09, p = 0.61) or 2024 (r = −0.12, p = 0.52), suggesting dissemination is driven by environmental pathways rather than farm-level usage.
+
+---
+
+## Data Sources
+
+All analyses use publicly available data. No proprietary datasets are involved.
+
+- **RESAPATH**: Réseau d'épidémiosurveillance de l'antibiorésistance des bactéries pathogènes animales — [resapath.anses.fr](https://resapath.anses.fr/)
+- **ALEA**: Agence nationale du médicament vétérinaire — French veterinary antimicrobial sales data
+- **NCBI / BioProject PRJNA1166088**: 127 bovine *E. coli* isolates, France (Haenni et al., 2017)
+
+---
+
+## Roadmap
+
+- [x] Exposure analysis (ALEA vs. RESAPATH)
+- [x] Longitudinal decoupling analysis (structural break identification)
+- [x] Genomic proof-of-concept (EC590 reference strain)
+- [ ] **Pilot screening of PRJNA1166088** ← *current focus*
+- [ ] ISApl1 decay quantification across evolutionary eras
+- [ ] BEAST 2 phylodynamic analysis
+- [ ] Environmental dissemination analysis (river basin transect)
+- [ ] Manuscript preparation
+
+---
+
+## Selected References
+
+- Haenni, M. et al. (2017). Increasing trends in *mcr-1* prevalence among ESBL-producing *E. coli* isolates from French calves despite decreasing exposure to colistin. *Antimicrobial Agents and Chemotherapy*, 60(10), 6433–6434.
+- Haenni, M. et al. (2025). No genetic link between *E. coli* isolates carrying *mcr-1* in bovines and humans in France. *Journal of Global Antimicrobial Resistance*, 41, 111–116.
+- Liu, Z. et al. (2021). Genetic features of plasmid- and chromosome-mediated *mcr-1* in *E. coli* isolates from animal organs with lesions. *Frontiers in Microbiology*, 12, 707332.
+
+---
+
+## About
+
+This project is an independent research initiative. All analyses use publicly available datasets and are fully documented for transparency and reproducibility.
+
+**Contact**: makiko.fujitasuzanne@gmail.com  
+**GitHub**: [github.com/Marocco101](https://github.com/Marocco101)
