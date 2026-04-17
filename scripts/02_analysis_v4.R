@@ -5,7 +5,7 @@
 # Date: 10 April 2026
 # ============================================
 # Baseline: RESAPATH (Bovine Digestive E. coli)
-# Period: 2011-2019 (reference PRJNA1166088)
+# Period: 2011-2018 (reference PRJNA1166088)
 # Source: https://resapath.anses.fr/
 # ============================================
 
@@ -85,21 +85,21 @@ cat("\n=== RESAPATH Baseline (Bovine E. coli, 2011-2019) ===\n\n")
 sul_by_year <- c(
   "2011" = 86, "2012" = 84, "2013" = 81,
   "2014" = 80, "2015" = 81, "2016" = 78,
-  "2017" = 75, "2018" = 78, "2019" = 77
+  "2017" = 75, "2018" = 78
 )
 
 # --- Trimethoprime resistance rate by year ---
 tmp_by_year <- c(
   "2011" = 22, "2012" = 28, "2013" = 14,
   "2014" = 39, "2015" = 32, "2016" = 34,
-  "2017" = 35, "2018" = 37, "2019" = 35
+  "2017" = 35, "2018" = 37
 )
 
 # --- Trimethoprime-Sulfamides combined resistance rate by year ---
 tmpsul_by_year <- c(
   "2011" = 37, "2012" = 38, "2013" = 39,
   "2014" = 38, "2015" = 37, "2016" = 37,
-  "2017" = 38, "2018" = 40, "2019" = 40
+  "2017" = 38, "2018" = 40
 )
 
 # --- Calculate means ---

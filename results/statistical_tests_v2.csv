@@ -1,0 +1,4 @@
+"Test","Observed","Expected","p.value","Significant"
+"sul vs dfrA (Fisher)",NA,NA,0.552179977502812,FALSE
+"sul enrichment (Binomial)",97.6,50,2.00718011391607e-33,TRUE
+"dfrA enrichment (Binomial)",69.3,40,2.38630456021506e-11,TRUE

@@ -1,4 +1,4 @@
 "Test","Observed_n","Observed_pct","RESAPATH_baseline_pct","p.value","Significant"
-"sul (any) vs Sulfamides",124,97.6,80,2.82797895058988e-09,TRUE
-"dfrA (any) vs Trimethoprime",88,69.3,30.7,4.47375688939162e-19,TRUE
-"Genetic Trap vs TMP-Sulfamides",85,66.9,38.2,5.39185350631823e-11,TRUE
+"sul (any) vs Sulfamides",124,97.6,80.4,4.95267223804176e-09,TRUE
+"dfrA (any) vs Trimethoprime",88,69.3,30.1,1.09522947452892e-19,TRUE
+"Genetic Trap vs TMP-Sulfamides",85,66.9,38,3.93887934204259e-11,TRUE
