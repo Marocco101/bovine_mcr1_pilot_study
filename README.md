@@ -126,6 +126,7 @@ Pilot screening of all 127 mcr-1 positive bovine *E. coli* isolates (PRJNA116608
 All three comparisons are highly significant (p < 0.001), indicating that *mcr-1* positive isolates carry sulfonamide and trimethoprim resistance genes at rates exceeding those of bovine *E. coli* from digestive pathology (RESAPATH, 2011-2018)). This supports the hypothesis that *mcr-1* is genetically linked to *sul/dfrA* through co-selection on shared mobile genetic elements.
 
 **Statistical Note:** Fisher's exact test was initially attempted to test co-occurrence of *mcr-1* with *sul/dfrA*, but was not applicable because all 127 isolates are *mcr-1* positive by design (PRJNA1166088 selection criteria), leaving no *mcr-1* negative comparison group. Binomial tests against RESAPATH phenotypic resistance baselines were adopted as the appropriate alternative. RESAPATH data reflect phenotypic resistance (MIC-based), while ResFinder detects genotypic resistance (gene presence); this distinction is acknowledged but does not invalidate the comparison, as genotype-phenotype concordance for *sul* and *dfrA* genes is well established in the literature.
+
 ## Data Sources
 
 All analyses use publicly available data. No proprietary datasets are involved.
@@ -138,7 +139,7 @@ All analyses use publicly available data. No proprietary datasets are involved.
 
 ## Roadmap
 
-![Research Roadmap](Github_roadmap.svg) 
+![Research Roadmap](Github_roadmap_2.svg) 
 
 **Phase 0 — Completed**
 - [x] Exposure analysis (ALEA vs. RESAPATH)
