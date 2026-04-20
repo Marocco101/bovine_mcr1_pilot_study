@@ -138,7 +138,7 @@ All analyses use publicly available data. No proprietary datasets are involved.
 
 ## Roadmap
 
-![Roesearch Roadmap](Github_roadmap.svg) 
+![Research Roadmap](Github_roadmap.svg) 
 
 **Phase 0 — Completed**
 - [x] Exposure analysis (ALEA vs. RESAPATH)
